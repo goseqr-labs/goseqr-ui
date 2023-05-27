@@ -19,10 +19,28 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './shared/footer/footer.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { ItemDefinitionComponent } from './pages/item-definition/item-definition.component';
+import { TaraComponent } from './pages/tara/tara.component';
+import { GuideComponent } from './pages/guide/guide.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ListItemDefinitionsComponent } from './pages/list-item-definitions/list-item-definitions.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    SidebarComponent,
+    HeaderComponent,
+    ItemDefinitionComponent,
+    TaraComponent,
+    GuideComponent,
+    PageNotFoundComponent,
+    HomeComponent,
+    ListItemDefinitionsComponent
   ],
   imports: [
     BrowserModule,
