@@ -28,6 +28,9 @@ import { GuideComponent } from './pages/guide/guide.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListItemDefinitionsComponent } from './pages/list-item-definitions/list-item-definitions.component';
+import { LoginComponent } from './pages/login/login.component';
+import {AuthenticationService} from "./_service/authentication.service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -40,11 +43,13 @@ import { ListItemDefinitionsComponent } from './pages/list-item-definitions/list
     GuideComponent,
     PageNotFoundComponent,
     HomeComponent,
-    ListItemDefinitionsComponent
+    ListItemDefinitionsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     MdbAccordionModule,
     MdbCarouselModule,
     MdbCheckboxModule,
@@ -62,7 +67,7 @@ import { ListItemDefinitionsComponent } from './pages/list-item-definitions/list
     MdbValidationModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
