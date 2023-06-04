@@ -31,6 +31,9 @@ import { ListItemDefinitionsComponent } from './pages/list-item-definitions/list
 import { LoginComponent } from './pages/login/login.component';
 import {AuthenticationService} from "./_service/authentication.service";
 import {FormsModule} from "@angular/forms";
+import { NgxExtendedPdfViewerModule } from "ngx-extended-pdf-viewer";
+import { XpsViewerComponent } from './pages/xps-viewer/xps-viewer.component';
+import {PdfViewerModule} from "ng2-pdf-viewer";
 
 @NgModule({
   declarations: [
@@ -44,10 +47,13 @@ import {FormsModule} from "@angular/forms";
     PageNotFoundComponent,
     HomeComponent,
     ListItemDefinitionsComponent,
-    LoginComponent
+    LoginComponent,
+    XpsViewerComponent
   ],
   imports: [
     BrowserModule,
+    NgxExtendedPdfViewerModule,
+    PdfViewerModule,
     AppRoutingModule,
     FormsModule,
     MdbAccordionModule,
