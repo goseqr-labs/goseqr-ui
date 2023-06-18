@@ -855,6 +855,13 @@ ngAfterViewInit(): void {
   console.log("Codec:", codec)
   const result = codec.decode(xmlDoc.documentElement, graph.getModel());
   console.log("Result:", result)
+
+  const divElements = document.querySelectorAll('div');
+
+  divElements.forEach(div => {
+    div.style.overflow = 'visible';
+  });
+
   }
 
 }
