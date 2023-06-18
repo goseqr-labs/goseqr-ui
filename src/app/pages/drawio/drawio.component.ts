@@ -54,6 +54,17 @@ ngAfterViewInit(): void {
   //const container = this.vsdxContainer.nativeElement;
   const graph = new mx.mxGraph(this.container);
 
+  graph.convertValueToString = function(cell: any) {
+    if (mx.mxUtils.isNode(cell.value)) {
+      // Assuming your object name is stored as an attribute in the XML node
+      let result = cell.value.getAttribute('label');
+      console.log(result)
+      return result
+    }
+
+    // Fallback to default conversion
+    return mx.mxGraph.prototype.convertValueToString.apply(this, arguments);
+  };
 
   // Load VSDX file as XML using mxUtils.load function
   const xmlData2 = mx.mxUtils.load('assets/sample.vsdx').getXml();
