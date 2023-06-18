@@ -53,6 +53,7 @@ ngAfterViewInit(): void {
     codec.decode(xmlDoc.documentElement, graph.getModel());*/
   //const container = this.vsdxContainer.nativeElement;
   const graph = new mx.mxGraph(this.container);
+  graph.htmlLabels = true;
 
   graph.convertValueToString = function(cell: any) {
     if (mx.mxUtils.isNode(cell.value)) {
