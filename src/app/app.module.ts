@@ -31,6 +31,7 @@ import { ListItemDefinitionsComponent } from './pages/list-item-definitions/list
 import { LoginComponent } from './pages/login/login.component';
 import {AuthenticationService} from "./_service/authentication.service";
 import {FormsModule} from "@angular/forms";
+import { DrawioComponent } from './pages/drawio/drawio.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {FormsModule} from "@angular/forms";
     PageNotFoundComponent,
     HomeComponent,
     ListItemDefinitionsComponent,
-    LoginComponent
+    LoginComponent,
+    DrawioComponent
   ],
   imports: [
     BrowserModule,
