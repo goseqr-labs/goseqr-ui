@@ -26,6 +26,10 @@ const routes: Routes = [
     data: {
       title: 'Home'
     }},
+  {path: 'tara', component: TaraComponent, canActivate: [AuthGuardService],
+    data: {
+      title: 'Threat Analysis and Risk Assessment'
+    }},
   {path: 'help', component: GuideComponent},
   {
     path: 'login',
