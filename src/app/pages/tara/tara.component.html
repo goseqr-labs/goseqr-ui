@@ -1,1 +1,227 @@
-<p>tara works!</p>
+<form [formGroup]="taraform" (ngSubmit)="onSubmit()">
+  <!-- 2 column grid layout with text inputs for the first and last names -->
+  <div class="row mb-4">
+    <div class="col">
+      <mdb-form-control>
+        <input mdbInput type="text" id="asset_name" class="form-control" formControlName="asset_name"/>
+        <label mdbLabel class="form-label" for="asset_name">Asset name</label>
+      </mdb-form-control>
+    </div>
+    <div class="col">
+      <mdb-form-control>
+        <input mdbInput type="text" id="attack_vector" class="form-control" formControlName="attack_vector"/>
+        <label mdbLabel class="form-label" for="attack_vector">Attack vector</label>
+      </mdb-form-control>
+    </div>
+  </div>
+
+  <!-- 3 row checkbox -->
+  <div class="row mb-4">
+    <!-- Default checkbox -->
+    <div class="col">
+      <div class="form-check">
+        <input
+          mdbCheckbox
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="confidentiality"
+          formControlName="confidentiality"
+        />
+        <label class="form-check-label" for="confidentiality">
+          Confidentiality
+        </label>
+      </div>
+    </div>
+    <!-- Checked checkbox -->
+    <div class="col">
+      <div class="form-check">
+        <input
+          mdbCheckbox
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="integrity"
+          [checked]="true"
+          formControlName="integrity"
+        />
+        <label class="form-check-label" for="integrity">
+          Integrity
+        </label>
+      </div>
+    </div>
+    <!-- Checked checkbox -->
+    <div class="col">
+      <div class="form-check">
+        <input
+          mdbCheckbox
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="availability"
+          formControlName="availability"
+        />
+        <label class="form-check-label" for="availability">
+          Availability
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Message input -->
+  <mdb-form-control class="form-outline mb-4">
+    <textarea mdbInput class="form-control" id="threat_scenario" rows="4" formControlName="threat_scenario"></textarea>
+    <label mdbLabel class="form-label" for="threat_scenario">Threat scenario</label>
+  </mdb-form-control>
+
+  <!-- Message input -->
+  <mdb-form-control class="form-outline mb-4">
+    <textarea mdbInput class="form-control" id="damage_scenario" rows="4" formControlName="damage_scenario"></textarea>
+    <label mdbLabel class="form-label" for="damage_scenario">Damage scenario</label>
+  </mdb-form-control>
+
+  <!-- Message input -->
+  <mdb-form-control class="form-outline mb-4">
+    <textarea mdbInput class="form-control" id="attack_route" rows="4" formControlName="attack_route"></textarea>
+    <label mdbLabel class="form-label" for="attack_route">Attack route</label>
+  </mdb-form-control>
+
+  <!-- Risk levels -->
+  <label mdbLabel class="form-label" for="impact_level_1">Impact level</label>
+  <div class="mb4">
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="impact_level"
+        id="impact_level_1"
+        formControlName="impact_level"
+        value="1"
+      />
+      <label class="form-check-label" for="impact_level_1">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="impact_level"
+        formControlName="impact_level"
+        id="impact_level_2"
+        value="2"
+      />
+      <label class="form-check-label" for="impact_level_2">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="impact_level"
+        formControlName="impact_level"
+        id="impact_level_3"
+        value="3"
+      />
+      <label class="form-check-label" for="impact_level_3">3</label>
+    </div>
+  </div>
+
+  <label mdbLabel class="form-label" for="risk_level">Risk level</label>
+  <div class="mb4">
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="risk_level"
+        formControlName="risk_level"
+        id="risk_level"
+        value="1"
+      />
+      <label class="form-check-label" for="risk_level">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="risk_level"
+        formControlName="risk_level"
+        id="risk_level_2"
+        value="2"
+      />
+      <label class="form-check-label" for="risk_level_2">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="risk_level"
+        formControlName="risk_level_3"
+        id="risk_level_3"
+        value="3"
+      />
+      <label class="form-check-label" for="risk_level_3">3</label>
+    </div>
+  </div>
+
+  <label mdbLabel class="form-label" for="security_level">Security level</label>
+  <div class="mb4">
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="security_level"
+        formControlName="security_level"
+        id="security_level"
+        value="1"
+      />
+      <label class="form-check-label" for="security_level">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="security_level"
+        formControlName="security_level"
+        id="security_level_2"
+        value="2"
+      />
+      <label class="form-check-label" for="security_level_2">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="security_level"
+        formControlName="security_level"
+        id="security_level_3"
+        value="3"
+      />
+      <label class="form-check-label" for="security_level_3">3</label>
+    </div>
+  </div>
+<br>
+    <mdb-form-control class="form-outline mb-4">
+      <input mdbInput type="text" id="cal_value" class="form-control" formControlName="cal_value"/>
+      <label mdbLabel class="form-label" for="cal_value">CAL Value</label>
+    </mdb-form-control>
+
+
+  <!-- Message input -->
+
+  <mdb-form-control class="form-outline mb-4">
+    <textarea mdbInput class="form-control" id="form6Example7" rows="4" formControlName="security_goal"></textarea>
+    <label mdbLabel class="form-label" for="form6Example7">Security Goal</label>
+  </mdb-form-control>
+
+  <!-- Submit button -->
+  <button mdbRipple class="btn btn-primary btn-block mb-4" type="submit">
+    Save
+  </button>
+</form>
