@@ -30,8 +30,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListItemDefinitionsComponent } from './pages/list-item-definitions/list-item-definitions.component';
 import { LoginComponent } from './pages/login/login.component';
 import {AuthenticationService} from "./_service/authentication.service";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DrawioComponent } from './pages/drawio/drawio.component';
+import {HttpClientModule} from "@angular/common/http";
+import { TaramodalComponent } from './shared/taramodal/taramodal.component';
 
 @NgModule({
   declarations: [
@@ -46,12 +48,14 @@ import { DrawioComponent } from './pages/drawio/drawio.component';
     HomeComponent,
     ListItemDefinitionsComponent,
     LoginComponent,
-    DrawioComponent
+    DrawioComponent,
+    TaramodalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     MdbAccordionModule,
     MdbCarouselModule,
     MdbCheckboxModule,
@@ -67,7 +71,8 @@ import { DrawioComponent } from './pages/drawio/drawio.component';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]
