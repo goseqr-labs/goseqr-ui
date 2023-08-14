@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {ItemDefinitionComponent} from "./pages/item-definition/item-definition.component";
 import {GuideComponent} from "./pages/guide/guide.component";
 import {TaraComponent} from "./pages/tara/tara.component";
@@ -8,6 +8,7 @@ import {HomeComponent} from "./pages/home/home.component";
 import {ListItemDefinitionsComponent} from "./pages/list-item-definitions/list-item-definitions.component";
 import {AuthGuardService} from "./_service/auth-guard.service";
 import {LoginComponent} from "./pages/login/login.component";
+import {ListTaraEntriesComponent} from "./pages/list-tara-entries/list-tara-entries.component";
 
 const routes: Routes = [
   {
@@ -18,18 +19,30 @@ const routes: Routes = [
       title: 'Home'
     }
   },
-  {path: 'item-definition', component: ItemDefinitionComponent, canActivate: [AuthGuardService],
+  {
+    path: 'item-definition', component: ItemDefinitionComponent, canActivate: [AuthGuardService],
     data: {
       title: 'Home'
-    }},
-  {path: 'list-item-definitions', component: ListItemDefinitionsComponent, canActivate: [AuthGuardService],
+    }
+  },
+  {
+    path: 'list-item-definitions', component: ListItemDefinitionsComponent, canActivate: [AuthGuardService],
     data: {
       title: 'Home'
-    }},
-  {path: 'tara', component: TaraComponent, canActivate: [AuthGuardService],
+    }
+  },
+  {
+    path: 'tara', component: TaraComponent, canActivate: [AuthGuardService],
     data: {
       title: 'Threat Analysis and Risk Assessment'
-    }},
+    }
+  },
+  {
+    path: 'list-tara-entries', component: ListTaraEntriesComponent, canActivate: [AuthGuardService],
+    data: {
+      title: 'Tara Entries'
+    }
+  },
   {path: 'help', component: GuideComponent},
   {
     path: 'login',
@@ -62,5 +75,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
 
