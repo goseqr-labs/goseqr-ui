@@ -53,4 +53,15 @@ export class TaraDataService {
       return [];
     }
   }
+
+  // Function to call the delete endpoint
+  deleteData(id: string): Observable<any> {
+    const url: string = `http://localhost:8081/delete-tara-form-by-id`; // Replace with your delete endpoint URL
+    const options = {
+      headers: {
+        'X-Delete-Id': id // Sending id as a header
+      }
+    };
+    return this.http.delete(url, options);
+  }
 }

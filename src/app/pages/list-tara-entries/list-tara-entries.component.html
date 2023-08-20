@@ -46,12 +46,12 @@
     <td> {{taraData.attackroute}}</td>
     <td>
       <span [ngClass]="{'text-danger': taraData.impactlevel >= 3, 'text-success': taraData.impactlevel < 3}">
-        {{taraData.impactlevel}}
+        {{impactLevelText[taraData.impactlevel]}}
       </span>
     </td>
     <td>
       <span [ngClass]="{'text-danger': taraData.risklevel >= 3, 'text-success': taraData.risklevel < 3}">
-        {{taraData.risklevel}}
+        {{riskLevelText[taraData.risklevel]}}
       </span>
     </td>
     <td>
@@ -76,7 +76,7 @@
       </button>
     </td>
     <td>
-      <button type="button" class="btn btn-link btn-sm px-3" mdbRipple rippleColor="dark">
+      <button type="button" class="btn btn-link btn-sm px-3" mdbRipple rippleColor="dark" (click)="onClickingTrash(taraData._id)">
         <i class="fas fa-trash" style="color: #FF7F7F;"></i>
       </button>
     </td>
