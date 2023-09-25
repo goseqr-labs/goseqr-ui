@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListTaraItemComponent implements OnInit {
 
+  isBlue: boolean = true;
   constructor() { }
 
   ngOnInit(): void {

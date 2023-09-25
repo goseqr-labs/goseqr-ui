@@ -13,6 +13,11 @@ export class TaraComponent implements OnInit {
 
   taraform: FormGroup;
   modalRef: MdbModalRef<TaramodalComponent> | null = null;
+  boldLabel: boolean = true;
+
+  severKeywords = ['death', 'accident', 'loss of life'];
+  majorKeywords = ['fracture'];
+  moderateKeywords = ['hardware'];
 
   constructor(private http: HttpClient, private modalService: MdbModalService) {
     this.taraform = new FormGroup<any>({
@@ -24,15 +29,40 @@ export class TaraComponent implements OnInit {
       threat_scenario: new FormControl(''),
       damage_scenario: new FormControl(''),
       attack_route: new FormControl(''),
-      impact_level: new FormControl(''),
-      risk_level: new FormControl(''),
+      impact_level: new FormControl({value: '', disabled: true}),
+      risk_level: new FormControl({value: '', disabled: true}),
       security_level: new FormControl(''),
       cal_value: new FormControl(''),
       security_goal: new FormControl(''),
+      safety: new FormControl(''),
+      privacy: new FormControl(''),
+      financial: new FormControl(''),
+      operational: new FormControl(''),
+      expertise: new FormControl(''),
+      knowledge_about_item: new FormControl(''),
+      elapsed_time_in_days: new FormControl(''),
+      window_of_opportunity: new FormControl(''),
+      equipment: new FormControl(''),
+      feasibility_level: new FormControl(''),
     })
   }
 
   ngOnInit(): void {
+  }
+
+  checkThreatScenario() {
+
+    const threatValue = this.taraform.get('threat_scenario')?.value.toLowerCase()
+    if (this.severKeywords.some(keyword => threatValue.includes(keyword))) {
+      console.log("Bye")
+      this.taraform.controls["impact_level"].setValue("4")
+    } else if (this.majorKeywords.some(keyword => threatValue.includes(keyword))){
+      this.taraform.controls["impact_level"].setValue("3")
+    } else if (this.moderateKeywords.some(keyword => threatValue.includes(keyword))) {
+      this.taraform.controls["impact_level"].setValue("2")
+    } else {
+      this.taraform.controls["impact_level"].setValue("1")
+    }
   }
 
   onSubmit(): void {
@@ -49,7 +79,6 @@ export class TaraComponent implements OnInit {
         attack_route: this.taraform.get('attack_route')?.value,
         impact_level: this.taraform.get('impact_level')?.value,
         risk_level: this.taraform.get('risk_level')?.value,
-        security_level: this.taraform.get('security_level')?.value,
         cal_value: this.taraform.get('cal_value')?.value,
         security_goal: this.taraform.get('security_goal')?.value,
       };

@@ -9,6 +9,7 @@ import {ListItemDefinitionsComponent} from "./pages/list-item-definitions/list-i
 import {AuthGuardService} from "./_service/auth-guard.service";
 import {LoginComponent} from "./pages/login/login.component";
 import {ListTaraEntriesComponent} from "./pages/list-tara-entries/list-tara-entries.component";
+import {ListTaraItemComponent} from "./pages/list-tara-item/list-tara-item.component";
 
 const routes: Routes = [
   {
@@ -41,6 +42,12 @@ const routes: Routes = [
     path: 'list-tara-entries', component: ListTaraEntriesComponent, canActivate: [AuthGuardService],
     data: {
       title: 'Tara Entries'
+    }
+  },
+  {
+    path: 'list-tara-item-details', component: ListTaraItemComponent, canActivate: [AuthGuardService],
+    data: {
+      title: 'Tara Item Details'
     }
   },
   {path: 'help', component: GuideComponent},

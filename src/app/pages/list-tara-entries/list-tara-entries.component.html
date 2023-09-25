@@ -1,86 +1,96 @@
 <div class="table-responsive">
-<table class="table align-middle table-hover">
-  <thead>
-  <tr>
-<!--    <th scope="col">Record Id</th>-->
-    <th scope="col">Asset Name</th>
-    <th scope="col">Attack Vector</th>
-    <th scope="col">Confidentiality</th>
-    <th scope="col">Integrity</th>
-    <th scope="col">Availability</th>
-    <th scope="col">Threat Scenario</th>
-    <th scope="col">Damage Scenario</th>
-    <th scope="col">Attack Route</th>
-    <th scope="col">Impact Level</th>
-    <th scope="col">Risk Level</th>
-    <th scope="col">Security Level</th>
-    <th scope="col">Cal Value</th>
-    <th scope="col">Security Goal</th>
-    <th scope="col">View</th>
-    <th scope="col">Edit</th>
-    <th scope="col">Delete</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr  *ngFor="let taraData of taraDataList">
-<!--    <th scope="row">{{ taraData._id?.slice(0, 2) }}...{{ taraData._id?.slice(-2) }}</th>-->
-    <td> {{taraData.assetname}} </td>
-    <td> {{taraData.attackvector}}</td>
-    <td>
+  <table class="table align-middle table-hover">
+    <thead>
+    <tr>
+      <!--    <th scope="col">Record Id</th>-->
+      <th scope="col">Asset Name <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+      <th scope="col">Attack Vector <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+      <th scope="col">Confidentiality <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+      <th scope="col">Integrity <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+      <th scope="col">Availability <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+      <th scope="col">Threat Scenario <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+      <th scope="col">Damage Scenario <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+      <th scope="col">Attack Route <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+      <th scope="col">Impact Level <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+      <th scope="col">Risk Level <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+      <th scope="col">Cal Value <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+      <th scope="col">Security Goal <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+      <th scope="col">View <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+      <th scope="col">Edit <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+      <th scope="col">Delete <span href="#" mdbTooltip="Delete the record"><i
+        class="fas fa-question-circle ml-2"></i></span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let taraData of taraDataList">
+      <!--    <th scope="row">{{ taraData._id?.slice(0, 2) }}...{{ taraData._id?.slice(-2) }}</th>-->
+      <td> {{taraData.assetname}} </td>
+      <td> {{taraData.attackvector}}</td>
+      <td>
       <span [ngClass]="{'text-danger': taraData.confidentiality, 'text-success': !taraData.confidentiality}">
         {{ taraData.confidentiality }}
       </span>
-    </td>
-    <td>
+      </td>
+      <td>
       <span [ngClass]="{'text-danger': taraData.integrity, 'text-success': !taraData.integrity}">
         {{taraData.integrity}}
       </span>
-    </td>
-    <td>
+      </td>
+      <td>
       <span [ngClass]="{'text-danger': taraData.availability, 'text-success': !taraData.availability}">
         {{taraData.availability}}
       </span>
-    </td>
-    <td> {{taraData.threatscenario}}</td>
-    <td> {{taraData.damagescenario}}</td>
-    <td> {{taraData.attackroute}}</td>
-    <td>
+      </td>
+      <td> {{taraData.threatscenario}}</td>
+      <td> {{taraData.damagescenario}}</td>
+      <td> {{taraData.attackroute}}</td>
+      <td>
       <span [ngClass]="{'text-danger': taraData.impactlevel >= 3, 'text-success': taraData.impactlevel < 3}">
         {{impactLevelText[taraData.impactlevel]}}
       </span>
-    </td>
-    <td>
+      </td>
+      <td>
       <span [ngClass]="{'text-danger': taraData.risklevel >= 3, 'text-success': taraData.risklevel < 3}">
         {{riskLevelText[taraData.risklevel]}}
       </span>
-    </td>
-    <td>
-      <span [ngClass]="{'text-danger': taraData.securitylevel >= 3, 'text-success': taraData.securitylevel < 3}">
-        {{taraData.securitylevel}}
-      </span>
-    </td>
-    <td>
+      </td>
+      <td>
       <span [ngClass]="{'text-danger': taraData.calvalue >= 100, 'text-success': taraData.calvalue < 100}">
         {{taraData.calvalue}}
       </span>
-    </td>
-    <td> {{taraData.securitygoal}}</td>
-    <td>
-      <button type="button" class="btn btn-link btn-sm px-3" mdbRipple rippleColor="dark">
-        <i class="fas fa-eye" style="color: lightseagreen;"></i>
-      </button>
-    </td>
-    <td>
-      <button type="button" class="btn btn-link btn-sm px-3" mdbRipple rippleColor="dark">
-        <i class="fas fa-pencil"></i>
-      </button>
-    </td>
-    <td>
-      <button type="button" class="btn btn-link btn-sm px-3" mdbRipple rippleColor="dark" (click)="onClickingTrash(taraData._id)">
-        <i class="fas fa-trash" style="color: #FF7F7F;"></i>
-      </button>
-    </td>
-  </tr>
-  </tbody>
-</table>
+      </td>
+      <td> {{taraData.securitygoal}}</td>
+      <td>
+        <button type="button" class="btn btn-link btn-sm px-3" mdbRipple rippleColor="dark">
+          <i class="fas fa-eye" style="color: lightseagreen;"></i>
+        </button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-link btn-sm px-3" mdbRipple rippleColor="dark">
+          <i class="fas fa-pencil"></i>
+        </button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-link btn-sm px-3" mdbRipple rippleColor="dark"
+                (click)="onClickingTrash(taraData._id)">
+          <i class="fas fa-trash" style="color: #FF7F7F;"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </div>

@@ -70,7 +70,7 @@
 
   <!-- Message input -->
   <mdb-form-control class="form-outline mb-4">
-    <textarea mdbInput class="form-control" id="threat_scenario" rows="4" formControlName="threat_scenario"></textarea>
+    <textarea mdbInput class="form-control" id="threat_scenario" rows="4" formControlName="threat_scenario" (input)="checkThreatScenario()"></textarea>
     <label mdbLabel class="form-label" for="threat_scenario">Threat scenario</label>
   </mdb-form-control>
 
@@ -86,8 +86,222 @@
     <label mdbLabel class="form-label" for="attack_route">Attack route</label>
   </mdb-form-control>
 
-  <!-- Risk levels -->
-  <label mdbLabel class="form-label" for="impact_level_1">Impact level</label>
+
+  <!--  Safety-->
+  <label mdbLabel class="form-label" for="safety_1">Safety</label>
+  <div class="mb4">
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="safety"
+        id="safety_1"
+        formControlName="safety"
+        value="1"
+      />
+      <label class="form-check-label" for="safety_1">Negligible</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="safety"
+        formControlName="safety"
+        id="safety_2"
+        value="2"
+      />
+      <label class="form-check-label" for="safety_2">Moderate</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="safety"
+        formControlName="safety"
+        id="safety_3"
+        value="3"
+      />
+      <label class="form-check-label" for="safety_3">Major</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="safety"
+        formControlName="safety"
+        id="safety_4"
+        value="4"
+      />
+      <label class="form-check-label" for="safety_4">Severe</label>
+    </div>
+  </div>
+
+  <!--  Privacy-->
+  <label mdbLabel class="form-label" for="privacy_1">Privacy</label>
+  <div class="mb4">
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="privacy"
+        id="privacy_1"
+        formControlName="privacy"
+        value="1"
+      />
+      <label class="form-check-label" for="privacy_1">Negligible</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="privacy"
+        formControlName="privacy"
+        id="privacy_2"
+        value="2"
+      />
+      <label class="form-check-label" for="privacy_2">Moderate</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="privacy"
+        formControlName="privacy"
+        id="privacy_3"
+        value="3"
+      />
+      <label class="form-check-label" for="privacy_3">Major</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="privacy"
+        formControlName="privacy"
+        id="privacy_4"
+        value="4"
+      />
+      <label class="form-check-label" for="privacy_4">Severe</label>
+    </div>
+  </div>
+
+  <!--  Financial-->
+  <label mdbLabel class="form-label" for="financial_1">Financial</label>
+  <div class="mb4">
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="financial"
+        id="financial_1"
+        formControlName="financial"
+        value="1"
+      />
+      <label class="form-check-label" for="financial_1">Negligible</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="financial"
+        formControlName="financial"
+        id="financial_2"
+        value="2"
+      />
+      <label class="form-check-label" for="financial_2">Moderate</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="financial"
+        formControlName="financial"
+        id="financial_3"
+        value="3"
+      />
+      <label class="form-check-label" for="financial_3">Major</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="financial"
+        formControlName="financial"
+        id="financial_4"
+        value="4"
+      />
+      <label class="form-check-label" for="financial_4">Severe</label>
+    </div>
+  </div>
+
+  <!--  Operational-->
+  <label mdbLabel class="form-label" for="operational_1">Operational</label>
+  <div class="mb4">
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="operational"
+        id="operational_1"
+        formControlName="operational"
+        value="1"
+      />
+      <label class="form-check-label" for="operational_1">Negligible</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="operational"
+        formControlName="operational"
+        id="operational_2"
+        value="2"
+      />
+      <label class="form-check-label" for="operational_2">Moderate</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="operational"
+        formControlName="operational"
+        id="operational_3"
+        value="3"
+      />
+      <label class="form-check-label" for="operational_3">Major</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="operational"
+        formControlName="operational"
+        id="operational_4"
+        value="4"
+      />
+      <label class="form-check-label" for="operational_4">Severe</label>
+    </div>
+  </div>
+
+
+  <!-- Impact level -->
+  <label mdbLabel class="form-label" for="impact_level_1" class="form-label" for="risk_level" [style.font-weight]="boldLabel ? 'bold' : 'normal'">Impact level</label>
   <div class="mb4">
     <div class="form-check form-check-inline">
       <input
@@ -139,7 +353,301 @@
     </div>
   </div>
 
-  <label mdbLabel class="form-label" for="risk_level">Risk level</label>
+  <!-- Horizontal line -->
+  <hr class="form-horizontal-line">
+
+  <!--  expertise -->
+  <label mdbLabel class="form-label" for="expertise">Expertise</label>
+  <div class="mb4">
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="expertise"
+        formControlName="expertise"
+        id="expertise"
+        value="1"
+      />
+      <label class="form-check-label" for="expertise">Layman</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="expertise"
+        formControlName="expertise"
+        id="expertise_2"
+        value="2"
+      />
+      <label class="form-check-label" for="expertise_2">Proficient</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="expertise"
+        formControlName="expertise"
+        id="expertise_3"
+        value="3"
+      />
+      <label class="form-check-label" for="expertise_3">Expert</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="expertise"
+        formControlName="expertise"
+        id="expertise_4"
+        value="4"
+      />
+      <label class="form-check-label" for="expertise_4">Experienced Expert</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="expertise"
+        formControlName="expertise"
+        id="expertise_5"
+        value="5"
+      />
+      <label class="form-check-label" for="expertise_5">Multiple Experts</label>
+    </div>
+  </div>
+
+  <!--  knowledge_about_item -->
+  <label mdbLabel class="form-label" for="knowledge_about_item">Knowledge about item</label>
+  <div class="mb4">
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="knowledge_about_item"
+        formControlName="knowledge_about_item"
+        id="knowledge_about_item"
+        value="1"
+      />
+      <label class="form-check-label" for="knowledge_about_item">Public</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="knowledge_about_item"
+        formControlName="knowledge_about_item"
+        id="knowledge_about_item_2"
+        value="2"
+      />
+      <label class="form-check-label" for="knowledge_about_item_2">Restricted</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="knowledge_about_item"
+        formControlName="knowledge_about_item"
+        id="knowledge_about_item_3"
+        value="3"
+      />
+      <label class="form-check-label" for="knowledge_about_item_3">Sensitive</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="knowledge_about_item"
+        formControlName="knowledge_about_item"
+        id="knowledge_about_item_4"
+        value="4"
+      />
+      <label class="form-check-label" for="knowledge_about_item_4">Critical</label>
+    </div>
+  </div>
+  <!--  elapsed_time_in_days -->
+  <label mdbLabel class="form-label" for="elapsed_time_in_days">Time to attack</label>
+  <div class="mb4">
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="elapsed_time_in_days"
+        formControlName="elapsed_time_in_days"
+        id="elapsed_time_in_days"
+        value="1"
+      />
+      <label class="form-check-label" for="elapsed_time_in_days"> > 6 Months </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="elapsed_time_in_days"
+        formControlName="elapsed_time_in_days"
+        id="elapsed_time_in_days_2"
+        value="2"
+      />
+      <label class="form-check-label" for="elapsed_time_in_days_2"> <= 6 Months </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="elapsed_time_in_days"
+        formControlName="elapsed_time_in_days"
+        id="elapsed_time_in_days_3"
+        value="3"
+      />
+      <label class="form-check-label" for="elapsed_time_in_days_3"> <= 1 Month </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="elapsed_time_in_days"
+        formControlName="elapsed_time_in_days"
+        id="elapsed_time_in_days_4"
+        value="4"
+      />
+      <label class="form-check-label" for="elapsed_time_in_days_4"> <= 1 Week </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="elapsed_time_in_days"
+        formControlName="elapsed_time_in_days"
+        id="elapsed_time_in_days_5"
+        value="4"
+      />
+      <label class="form-check-label" for="elapsed_time_in_days_5"> <= 1 Day </label>
+    </div>
+  </div>
+
+  <!--  window_of_opportunity -->
+  <label mdbLabel class="form-label" for="window_of_opportunity">Window of Opportunity</label>
+  <div class="mb4">
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="window_of_opportunity"
+        formControlName="window_of_opportunity"
+        id="window_of_opportunity"
+        value="1"
+      />
+      <label class="form-check-label" for="window_of_opportunity">Network</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="window_of_opportunity"
+        formControlName="window_of_opportunity"
+        id="window_of_opportunity_2"
+        value="2"
+      />
+      <label class="form-check-label" for="window_of_opportunity_2">Adjacent</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="window_of_opportunity"
+        formControlName="window_of_opportunity"
+        id="window_of_opportunity_3"
+        value="3"
+      />
+      <label class="form-check-label" for="window_of_opportunity_3">Local</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="window_of_opportunity"
+        formControlName="window_of_opportunity"
+        id="window_of_opportunity_4"
+        value="4"
+      />
+      <label class="form-check-label" for="window_of_opportunity_4">Physical</label>
+    </div>
+  </div>
+
+  <!--  equipment -->
+  <label mdbLabel class="form-label" for="equipment">Equipment</label>
+  <div class="mb4">
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="equipment"
+        formControlName="equipment"
+        id="equipment"
+        value="1"
+      />
+      <label class="form-check-label" for="equipment">Standard</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="equipment"
+        formControlName="equipment"
+        id="equipment_2"
+        value="2"
+      />
+      <label class="form-check-label" for="equipment_2">Specialized</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="equipment"
+        formControlName="equipment"
+        id="equipment_3"
+        value="3"
+      />
+      <label class="form-check-label" for="equipment_3">Bespoke</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        mdbRadio
+        class="form-check-input"
+        type="radio"
+        name="equipment"
+        formControlName="equipment"
+        id="equipment_4"
+        value="4"
+      />
+      <label class="form-check-label" for="equipment_4">Multiple bespoke</label>
+    </div>
+  </div>
+
+  <!--  feasibility_level -->
+
+  <!--  Risk Level-->
+  <label mdbLabel class="form-label" for="risk_level" [style.font-weight]="boldLabel ? 'bold' : 'normal'">Risk level</label>
   <div class="mb4">
     <div class="form-check form-check-inline">
       <input
@@ -171,7 +679,7 @@
         class="form-check-input"
         type="radio"
         name="risk_level"
-        formControlName="risk_level_3"
+        formControlName="risk_level"
         id="risk_level_3"
         value="3"
       />
@@ -183,58 +691,21 @@
         class="form-check-input"
         type="radio"
         name="risk_level"
-        formControlName="risk_level_3"
+        formControlName="risk_level"
         id="risk_level_4"
         value="4"
       />
       <label class="form-check-label" for="risk_level_4">High</label>
     </div>
   </div>
+  <!-- Horizontal line -->
+  <hr class="form-horizontal-line">
 
-  <label mdbLabel class="form-label" for="security_level">Security level</label>
-  <div class="mb4">
-    <div class="form-check form-check-inline">
-      <input
-        mdbRadio
-        class="form-check-input"
-        type="radio"
-        name="security_level"
-        formControlName="security_level"
-        id="security_level"
-        value="1"
-      />
-      <label class="form-check-label" for="security_level">1</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input
-        mdbRadio
-        class="form-check-input"
-        type="radio"
-        name="security_level"
-        formControlName="security_level"
-        id="security_level_2"
-        value="2"
-      />
-      <label class="form-check-label" for="security_level_2">2</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input
-        mdbRadio
-        class="form-check-input"
-        type="radio"
-        name="security_level"
-        formControlName="security_level"
-        id="security_level_3"
-        value="3"
-      />
-      <label class="form-check-label" for="security_level_3">3</label>
-    </div>
-  </div>
-<br>
-    <mdb-form-control class="form-outline mb-4">
-      <input mdbInput type="text" id="cal_value" class="form-control" formControlName="cal_value"/>
-      <label mdbLabel class="form-label" for="cal_value">CAL Value</label>
-    </mdb-form-control>
+  <br>
+  <mdb-form-control class="form-outline mb-4">
+    <input mdbInput type="text" id="cal_value" class="form-control" formControlName="cal_value"/>
+    <label mdbLabel class="form-label" for="cal_value">CAL Value</label>
+  </mdb-form-control>
 
 
   <!-- Message input -->
