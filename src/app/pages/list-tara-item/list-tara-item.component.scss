@@ -1,0 +1,6 @@
+$blue-color: blue;
+
+.blue-text {
+  color: $blue-color; // Using the variable defined earlier
+  font-weight: bold;
+}

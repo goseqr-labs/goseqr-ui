@@ -34,6 +34,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DrawioComponent } from './pages/drawio/drawio.component';
 import {HttpClientModule} from "@angular/common/http";
 import { TaramodalComponent } from './shared/taramodal/taramodal.component';
+import { ListTaraEntriesComponent } from './pages/list-tara-entries/list-tara-entries.component';
+import { ListTaraItemComponent } from './pages/list-tara-item/list-tara-item.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { TaramodalComponent } from './shared/taramodal/taramodal.component';
     ListItemDefinitionsComponent,
     LoginComponent,
     DrawioComponent,
-    TaramodalComponent
+    TaramodalComponent,
+    ListTaraEntriesComponent,
+    ListTaraItemComponent
   ],
   imports: [
     BrowserModule,
